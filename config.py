@@ -2,7 +2,7 @@
 # Этот файл содержит приватные ключи и не должен попадать в Git
 
 # Telegram Bot Token
-TELEGRAM_BOT_TOKEN = '8452054440:AAGHbmRvT0EDdKwHDt5iNdw6QjN93AOhGYU'
+TELEGRAM_BOT_TOKEN = '8100420576:AAESSCNl4fUM3BhnM0Q2gKH6hmpkI7BltSU'
 
 # Unsplash API Configuration
 # Для публичных запросов нужен только Access Key (он же Client ID)
