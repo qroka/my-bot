@@ -113,7 +113,7 @@ def create_image_choice_keyboard():
     """Создает клавиатуру выбора: есть изображение или нужно найти"""
     keyboard = InlineKeyboardMarkup()
     keyboard.row(
-        InlineKeyboardButton("✅ У меня есть изображение", callback_data="have_image")
+        InlineKeyboardButton("🖼 У меня есть изображение", callback_data="have_image")
     )
     keyboard.row(
         InlineKeyboardButton("🔍 Найти изображение", callback_data="search_image")
@@ -128,6 +128,48 @@ def create_image_approval_keyboard():
         InlineKeyboardButton("❌ Найти другое", callback_data="search_another")
     )
     return keyboard
+
+def send_orientation_hint(chat_id, user_id, mode_text):
+    """Отправляет изображение-подсказку с выбором ориентации"""
+    try:
+        # Путь к изображению подсказки
+        hint_path = os.path.join("hints", "Подсказка.png")
+        
+        # Проверяем существование файла подсказки
+        if os.path.exists(hint_path):
+            # Отправляем изображение с подсказкой
+            with open(hint_path, 'rb') as photo:
+                bot.send_photo(
+                    chat_id,
+                    photo,
+                    caption=f"✅ Выбрано создание для {mode_text}!\n\n"
+                            f"Заголовок: \"{user_headers[user_id]}\"\n\n"
+                            "Выберите ориентацию для инвестпортала:",
+                    reply_markup=create_landscape_orientation_keyboard()
+                )
+        else:
+            # Если файла подсказки нет, отправляем обычное текстовое сообщение
+            bot.send_message(
+                chat_id,
+                f"✅ Выбрано создание для {mode_text}!\n\n"
+                f"Заголовок: \"{user_headers[user_id]}\"\n\n"
+                "Выберите ориентацию для инвестпортала:\n\n"
+                "💼 **По центру** - изображение располагается в центре\n"
+                "💼 **По верху** - изображение прижато к верхнему краю\n" 
+                "💼 **По низу** - изображение прижато к нижнему краю",
+                parse_mode='Markdown',
+                reply_markup=create_landscape_orientation_keyboard()
+            )
+    except Exception as e:
+        print(f"Ошибка отправки подсказки: {e}")
+        # В случае ошибки отправляем простое текстовое сообщение
+        bot.send_message(
+            chat_id,
+            f"✅ Выбрано создание для {mode_text}!\n\n"
+            f"Заголовок: \"{user_headers[user_id]}\"\n\n"
+            "Выберите ориентацию для инвестпортала:",
+            reply_markup=create_landscape_orientation_keyboard()
+        )
 
 def create_temp_image_file(image_data, user_id):
     """Создает временный файл изображения из данных"""
@@ -755,58 +797,16 @@ def handle_processing_choice(call):
         user_landscape_orientation[user_id] = 'both'
         bot.answer_callback_query(call.id, "Выбери ориентацию для инвестпортала")
         
-        # Проверяем, есть ли изображение в сообщении
-        if call.message.photo:
-            # Если есть фото, используем edit_message_caption
-            bot.edit_message_caption(
-                f"✅ Выбрано создание для соцсетей + инвестпортала!\n\n"
-                f"Заголовок: \"{user_headers[user_id]}\"\n\n"
-                "Теперь выбери ориентацию для инвестпортала:",
-                chat_id=call.message.chat.id,
-                message_id=call.message.message_id,
-                parse_mode='Markdown',
-                reply_markup=create_landscape_orientation_keyboard()
-            )
-        else:
-            # Если нет фото, используем edit_message_text
-            bot.edit_message_text(
-                f"✅ Выбрано создание для соцсетей + инвестпортала!\n\n"
-                f"Заголовок: \"{user_headers[user_id]}\"\n\n"
-                "Теперь выбери ориентацию для инвестпортала:",
-                chat_id=call.message.chat.id,
-                message_id=call.message.message_id,
-                parse_mode='Markdown',
-                reply_markup=create_landscape_orientation_keyboard()
-            )
+        # Отправляем новое сообщение с подсказкой
+        send_orientation_hint(call.message.chat.id, user_id, "соцсетей + инвестпортала")
     
     elif choice == 'investor_only':
         # Только для инвестпортала - спрашиваем ориентацию
         user_landscape_orientation[user_id] = 'investor_only'
         bot.answer_callback_query(call.id, "Выбери ориентацию для инвестпортала")
         
-        # Проверяем, есть ли изображение в сообщении
-        if call.message.photo:
-            # Если есть фото, используем edit_message_caption
-            bot.edit_message_caption(
-                f"✅ Выбрано создание только для инвестпортала!\n\n"
-                f"Заголовок: \"{user_headers[user_id]}\"\n\n"
-                "Теперь выбери ориентацию для инвестпортала:",
-                chat_id=call.message.chat.id,
-                message_id=call.message.message_id,
-                parse_mode='Markdown',
-                reply_markup=create_landscape_orientation_keyboard()
-            )
-        else:
-            # Если нет фото, используем edit_message_text
-            bot.edit_message_text(
-                f"✅ Выбрано создание только для инвестпортала!\n\n"
-                f"Заголовок: \"{user_headers[user_id]}\"\n\n"
-                "Теперь выбери ориентацию для инвестпортала:",
-                chat_id=call.message.chat.id,
-                message_id=call.message.message_id,
-                parse_mode='Markdown',
-                reply_markup=create_landscape_orientation_keyboard()
-            )
+        # Отправляем новое сообщение с подсказкой
+        send_orientation_hint(call.message.chat.id, user_id, "только для инвестпортала")
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('orientation_'))
 def handle_landscape_orientation_choice(call):
