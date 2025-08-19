@@ -2320,3 +2320,304 @@ telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsucc
 2025-08-14 12:03:53,198 - INFO - Выравнивание ландшафта: bottom
 2025-08-14 12:03:53,199 - INFO - Применено выравнивание по низу
 2025-08-14 12:03:57,850 - INFO - Сохранено: output\user_image_landscape_bottom.png
+2025-08-19 09:28:48,463 - INFO - response: https://duckduckgo.com/?q=%D0%B3%D0%BE%D1%80%D0%BE%D0%B4+%D1%81%D1%83%D1%80%D0%B3%D1%83%D1%82 200
+2025-08-19 09:28:49,706 - INFO - response: https://duckduckgo.com/i.js?o=json&q=%D0%B3%D0%BE%D1%80%D0%BE%D0%B4+%D1%81%D1%83%D1%80%D0%B3%D1%83%D1%82&l=wt-wt&vqd=4-93905490930530466235974710335096131612&p=1&f=%2Csize%3Amedium%2C%2C%2C%2C 200
+2025-08-19 09:29:46,773 - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: query is too old and response timeout expired or query ID is invalid
+2025-08-19 09:29:46,778 - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\__init__.py", line 9759, in _run_middlewares_and_handler
+    result = handler['function'](message)
+  File "c:\Users\ROKA\Desktop\bot\telebot_bot.py", line 558, in handle_image_approval
+    bot.answer_callback_query(call.id, "Сначала отправь заголовок!")
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\__init__.py", line 6081, in answer_callback_query
+    return apihelper.answer_callback_query(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.token, callback_query_id, text=text, show_alert=show_alert, url=url, cache_time=cache_time)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\apihelper.py", line 1871, in answer_callback_query
+    return _make_request(token, method_url, params=payload, method='post')
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: query is too old and response timeout expired or query ID is invalid
+
+2025-08-19 09:30:08,755 - INFO - response: https://duckduckgo.com/?q=%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0+%D1%81%D1%83%D1%80%D0%B3%D1%83%D1%82%D1%81%D0%BA%D0%BE%D0%B3%D0%BE+%D1%80%D0%B0%D0%B9%D0%BE%D0%BD%D0%B0 202
+2025-08-19 09:30:21,861 - INFO - response: https://duckduckgo.com/?q=%D0%A1%D1%83%D1%80%D0%B3%D1%83%D1%82%D1%81%D0%BA%D0%B8%D0%B9+%D1%80%D0%B0%D0%B9%D0%BE%D0%BD 200
+2025-08-19 09:30:23,146 - INFO - response: https://duckduckgo.com/i.js?o=json&q=%D0%A1%D1%83%D1%80%D0%B3%D1%83%D1%82%D1%81%D0%BA%D0%B8%D0%B9+%D1%80%D0%B0%D0%B9%D0%BE%D0%BD&l=wt-wt&vqd=4-80639402092879473418621940255885325089&p=1&f=%2Csize%3Amedium%2C%2C%2C%2C 200
+2025-08-19 09:31:33,166 - INFO - response: https://duckduckgo.com/?q=%D1%82%D0%B0%D0%B9%D0%B3%D0%B0 202
+2025-08-19 09:31:39,389 - INFO - response: https://duckduckgo.com/?q=%D0%A2%D0%B0%D0%B9%D0%B3%D0%B0 200
+2025-08-19 09:31:40,662 - INFO - response: https://duckduckgo.com/i.js?o=json&q=%D0%A2%D0%B0%D0%B9%D0%B3%D0%B0&l=wt-wt&vqd=4-116872345522624998632461639557312464968&p=1&f=%2Csize%3Amedium%2C%2C%2C%2C 200
+2025-08-19 09:32:03,811 - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: there is no text in the message to edit
+2025-08-19 09:32:03,815 - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\__init__.py", line 9759, in _run_middlewares_and_handler
+    result = handler['function'](message)
+  File "c:\Users\ROKA\Desktop\bot\telebot_bot.py", line 659, in handle_processing_choice
+    bot.edit_message_text(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        f"✅ Выбрано создание только для инвестпортала!\n\n"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        reply_markup=create_landscape_orientation_keyboard()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\__init__.py", line 4997, in edit_message_text
+    result = apihelper.edit_message_text(
+        self.token, text, chat_id=chat_id, message_id=message_id, inline_message_id=inline_message_id,
+        parse_mode=parse_mode, entities=entities, reply_markup=reply_markup, link_preview_options=link_preview_options,
+        business_connection_id=business_connection_id, timeout=timeout)
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\apihelper.py", line 1524, in edit_message_text
+    return _make_request(token, method_url, params=payload, method='post')
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: there is no text in the message to edit
+
+2025-08-19 09:32:06,418 - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: there is no text in the message to edit
+2025-08-19 09:32:06,426 - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\__init__.py", line 9759, in _run_middlewares_and_handler
+    result = handler['function'](message)
+  File "c:\Users\ROKA\Desktop\bot\telebot_bot.py", line 659, in handle_processing_choice
+    bot.edit_message_text(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        f"✅ Выбрано создание только для инвестпортала!\n\n"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        reply_markup=create_landscape_orientation_keyboard()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\__init__.py", line 4997, in edit_message_text
+    result = apihelper.edit_message_text(
+        self.token, text, chat_id=chat_id, message_id=message_id, inline_message_id=inline_message_id,
+        parse_mode=parse_mode, entities=entities, reply_markup=reply_markup, link_preview_options=link_preview_options,
+        business_connection_id=business_connection_id, timeout=timeout)
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\apihelper.py", line 1524, in edit_message_text
+    return _make_request(token, method_url, params=payload, method='post')
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: there is no text in the message to edit
+
+2025-08-19 09:32:08,760 - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: there is no text in the message to edit
+2025-08-19 09:32:08,765 - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\__init__.py", line 9759, in _run_middlewares_and_handler
+    result = handler['function'](message)
+  File "c:\Users\ROKA\Desktop\bot\telebot_bot.py", line 645, in handle_processing_choice
+    bot.edit_message_text(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        f"✅ Выбрано создание для соцсетей + инвестпортала!\n\n"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        reply_markup=create_landscape_orientation_keyboard()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\__init__.py", line 4997, in edit_message_text
+    result = apihelper.edit_message_text(
+        self.token, text, chat_id=chat_id, message_id=message_id, inline_message_id=inline_message_id,
+        parse_mode=parse_mode, entities=entities, reply_markup=reply_markup, link_preview_options=link_preview_options,
+        business_connection_id=business_connection_id, timeout=timeout)
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\apihelper.py", line 1524, in edit_message_text
+    return _make_request(token, method_url, params=payload, method='post')
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: there is no text in the message to edit
+
+2025-08-19 09:32:09,915 - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: there is no text in the message to edit
+2025-08-19 09:32:09,922 - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\__init__.py", line 9759, in _run_middlewares_and_handler
+    result = handler['function'](message)
+  File "c:\Users\ROKA\Desktop\bot\telebot_bot.py", line 645, in handle_processing_choice
+    bot.edit_message_text(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        f"✅ Выбрано создание для соцсетей + инвестпортала!\n\n"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        reply_markup=create_landscape_orientation_keyboard()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\__init__.py", line 4997, in edit_message_text
+    result = apihelper.edit_message_text(
+        self.token, text, chat_id=chat_id, message_id=message_id, inline_message_id=inline_message_id,
+        parse_mode=parse_mode, entities=entities, reply_markup=reply_markup, link_preview_options=link_preview_options,
+        business_connection_id=business_connection_id, timeout=timeout)
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\apihelper.py", line 1524, in edit_message_text
+    return _make_request(token, method_url, params=payload, method='post')
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: there is no text in the message to edit
+
+2025-08-19 09:33:04,222 - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: there is no text in the message to edit
+2025-08-19 09:33:04,226 - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\__init__.py", line 9759, in _run_middlewares_and_handler
+    result = handler['function'](message)
+  File "c:\Users\ROKA\Desktop\bot\telebot_bot.py", line 607, in handle_processing_choice
+    bot.edit_message_text(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        f"✅ Выбрано создание только для соцсетей!\n\n"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        parse_mode='Markdown'
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\__init__.py", line 4997, in edit_message_text
+    result = apihelper.edit_message_text(
+        self.token, text, chat_id=chat_id, message_id=message_id, inline_message_id=inline_message_id,
+        parse_mode=parse_mode, entities=entities, reply_markup=reply_markup, link_preview_options=link_preview_options,
+        business_connection_id=business_connection_id, timeout=timeout)
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\apihelper.py", line 1524, in edit_message_text
+    return _make_request(token, method_url, params=payload, method='post')
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: there is no text in the message to edit
+
+2025-08-19 09:33:05,980 - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: there is no text in the message to edit
+2025-08-19 09:33:05,988 - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\__init__.py", line 9759, in _run_middlewares_and_handler
+    result = handler['function'](message)
+  File "c:\Users\ROKA\Desktop\bot\telebot_bot.py", line 645, in handle_processing_choice
+    bot.edit_message_text(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        f"✅ Выбрано создание для соцсетей + инвестпортала!\n\n"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        reply_markup=create_landscape_orientation_keyboard()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\__init__.py", line 4997, in edit_message_text
+    result = apihelper.edit_message_text(
+        self.token, text, chat_id=chat_id, message_id=message_id, inline_message_id=inline_message_id,
+        parse_mode=parse_mode, entities=entities, reply_markup=reply_markup, link_preview_options=link_preview_options,
+        business_connection_id=business_connection_id, timeout=timeout)
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\apihelper.py", line 1524, in edit_message_text
+    return _make_request(token, method_url, params=payload, method='post')
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: there is no text in the message to edit
+
+2025-08-19 09:35:06,177 - INFO - response: https://duckduckgo.com/?q=%D0%A0%D1%8B%D0%B1%D0%B0%D0%BB%D0%BA%D0%B0+%D0%BD%D0%B0+%D0%9E%D0%B1%D0%B8 200
+2025-08-19 09:35:07,412 - INFO - response: https://duckduckgo.com/i.js?o=json&q=%D0%A0%D1%8B%D0%B1%D0%B0%D0%BB%D0%BA%D0%B0+%D0%BD%D0%B0+%D0%9E%D0%B1%D0%B8&l=wt-wt&vqd=4-80405969214415287009477002863388738743&p=1&f=%2Csize%3Amedium%2C%2C%2C%2C 200
+2025-08-19 09:36:13,831 - INFO - response: https://duckduckgo.com/?q=%D0%A0%D1%8B%D0%B1%D0%B0%D0%BB%D0%BA%D0%B0+%D0%BD%D0%B0+%D0%9E%D0%B1%D0%B8 200
+2025-08-19 09:36:15,004 - INFO - response: https://duckduckgo.com/i.js?o=json&q=%D0%A0%D1%8B%D0%B1%D0%B0%D0%BB%D0%BA%D0%B0+%D0%BD%D0%B0+%D0%9E%D0%B1%D0%B8&l=wt-wt&vqd=4-80405969214415287009477002863388738743&p=1&f=%2Csize%3Amedium%2C%2C%2C%2C 200
+2025-08-19 09:36:53,880 - INFO - response: https://duckduckgo.com/?q=%D1%80%D1%8B%D0%B1%D0%B0%D0%BB%D0%BA%D0%B0 200
+2025-08-19 09:36:55,113 - INFO - response: https://duckduckgo.com/i.js?o=json&q=%D1%80%D1%8B%D0%B1%D0%B0%D0%BB%D0%BA%D0%B0&l=wt-wt&vqd=4-38832156634989216674056768291267395588&p=1&f=%2Csize%3Amedium%2C%2C%2C%2C 200
+2025-08-19 09:37:21,895 - INFO - response: https://duckduckgo.com/?q=%D1%80%D1%8B%D0%B1%D0%B0%D0%BB%D0%BA%D0%B0 200
+2025-08-19 09:37:23,165 - INFO - response: https://duckduckgo.com/i.js?o=json&q=%D1%80%D1%8B%D0%B1%D0%B0%D0%BB%D0%BA%D0%B0&l=wt-wt&vqd=4-38832156634989216674056768291267395588&p=1&f=%2Csize%3Amedium%2C%2C%2C%2C 200
+2025-08-19 10:10:13,756 - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: query is too old and response timeout expired or query ID is invalid
+2025-08-19 10:10:13,764 - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\__init__.py", line 9759, in _run_middlewares_and_handler
+    result = handler['function'](message)
+  File "c:\Users\ROKA\Desktop\bot\telebot_bot.py", line 776, in handle_landscape_orientation_choice
+    bot.answer_callback_query(call.id, "Сначала отправь заголовок!")
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\__init__.py", line 6081, in answer_callback_query
+    return apihelper.answer_callback_query(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.token, callback_query_id, text=text, show_alert=show_alert, url=url, cache_time=cache_time)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\apihelper.py", line 1871, in answer_callback_query
+    return _make_request(token, method_url, params=payload, method='post')
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\ROKA\AppData\Roaming\Python\Python313\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: query is too old and response timeout expired or query ID is invalid
+
+2025-08-19 10:10:47,806 - INFO - Выравнивание ландшафта: top
+2025-08-19 10:10:47,808 - INFO - Применено выравнивание по верху
+2025-08-19 10:10:50,088 - INFO - Сохранено: output\user_image_landscape_top.png
+2025-08-19 10:11:31,507 - INFO - Сохранено: output\user_image_square.png
+2025-08-19 10:11:54,042 - INFO - Выравнивание ландшафта: top
+2025-08-19 10:11:54,043 - INFO - Применено выравнивание по верху
+2025-08-19 10:11:57,985 - INFO - Сохранено: output\user_image_landscape_top.png
+2025-08-19 10:43:38,027 - INFO - Сохранено: output\user_image_square.png
+2025-08-19 10:43:38,174 - INFO - Выравнивание ландшафта: center
+2025-08-19 10:43:38,175 - INFO - Применено выравнивание по центру
+2025-08-19 10:43:41,597 - INFO - Сохранено: output\user_image_landscape_center.png
